@@ -7,7 +7,20 @@
     </head>
     <body>
         <h1><a href="index.html"
-            style="color: black; text-decoration: none;">CHESS란 무엇인가</a></h1>
+            style="color:gray; text-decoration: none;">CHESS란 무엇인가</a></h1>
+            <input type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night') {
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day';
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night';
+            }
+            ">
+
             <ol><br>
             <div class="grid">
                 <h2><li>HISTORY</li></h2>
