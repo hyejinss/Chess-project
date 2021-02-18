@@ -26,8 +26,48 @@
             }
         </style>
     </head>
+    <script>
+        var Links =  {
+            setColor:function (color){
+            var list = document.querySelectorAll('a');
+            var i = 0;
+            while( i < list.length ){
+            console.log(list[i]);
+            list[i].style.color = color;
+            i = i + 1
+                }
+            }
+        }
+        var Body = {
+            setColor:function (color){
+            document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor:function (color){
+            document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        function ChangeDayOrNight(self){
+        var target = document.querySelector('body');
+        if (self.value === 'night') {
+            Body.setBackgroundColor('black');
+            Body.setColor('white');
+            self.value = 'day';
+            
+            Links.setColor('powderblue');
+            
+        }else {
+            Body.setBackgroundColor('white');
+            Body.setColor('black');
+            self.value = 'night';
+            
+            Links.setColor('blue');
+            }
+            
+        }
+    </script>
     <body>
         <h2>KINGHT</h2>
+        <input type="button" value="night" onclick="ChangeDayOrNight(this)">
         <img src="knight.jpg" width="500px">
         <ul>
             <li>한 줄에서는 2칸, 직각을 이루는 줄에서는 1칸 L자 모양으로 움직일 수 있는 말</li>
